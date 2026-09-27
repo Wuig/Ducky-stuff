@@ -2,7 +2,7 @@ REM Author: Wu1g
 REM Title: Open Wu1g repository 
 REM Version 1.0 MacOs
 REM Category: Wu1g - MacOS scripts
-REM This Script will open Wu1g guthub repository 
+REM This script will open Wu1g github repository 
 
 
 DELAY 1000
