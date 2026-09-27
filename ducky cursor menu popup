@@ -1,0 +1,24 @@
+REM Title: MacOS cursor change
+REM Author: Wu1g
+REM Description: pulls up cursor change menu  
+REM Target: MacOS 
+REM Version: 1.0
+REM Category: MacOS - Wu1g scripts
+REM To get to pointer settings not alter or move after pulling up settings menu - further prompts required
+
+
+
+DELAY 2000
+GUI SPACE
+DELAY 500
+STRING system settings
+ENTER
+DELAY 1000
+STRING accessibility
+ENTER
+DELAY 1000
+STRING display
+ENTER
+DELAY 1000
+STRING pointer
+ENTER
