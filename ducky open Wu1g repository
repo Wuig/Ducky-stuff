@@ -1,0 +1,17 @@
+REM Author: Wu1g
+REM Title: Open Wu1g repository 
+REM Version 1.0 MacOs
+REM Category: Wu1g - MacOS scripts
+REM This Script will open Wu1g guthub repository 
+
+
+DELAY 1000
+GUI SPACE
+DELAY 200
+STRING terminal
+DELAY 1000
+ENTER
+DELAY 1000
+STRING open - a Safari https://github.com/wuig/Ducky-stuff   
+DELAY 1000
+ENTER
