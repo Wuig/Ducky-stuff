@@ -1,0 +1,95 @@
+REM Title: MacOS screen shot to email or desktop
+REM Author: Wu1g
+REM Description: Takes screen shot and then options to email or save to desktop
+REM Target: MacOS 
+REM Version: 1.0
+REM Category: MacOS - Wu1g scripts
+REM Email address needs replaced , must use bash or linux, below script separated into 3 for ease of use
+REM Draft code
+
+
+
+
+DELAY 2000
+GUI SPACE
+DELAY 500
+STRING terminal
+DELAY 500
+ENTER
+DELAY 500
+STRING echo "USB Script Utility"
+ENTER
+DELAY 500
+STRING echo "-------------------"
+ENTER
+DELAY 500
+STRING echo "Capturing Screenshot..."
+ENTER
+DELAY 500
+STRING screencapture -W ~/Desktop/screenshot.png
+ENTER
+DELAY 1000
+STRING echo "Screenshot captured and saved to Desktop!"
+ENTER
+DELAY 500
+STRING echo "-------------------"
+ENTER
+DELAY 500
+STRING echo "Preparing email..."
+ENTER
+DELAY 500
+
+REM Replace with the actual email address
+
+STRING RECIPIENT="someone@example.com"
+ENTER
+DELAY 200
+STRING SUBJECT="Screenshot from Mac"
+ENTER
+DELAY 200
+STRING BODY="Hi,\n\nPlease find the attached screenshot.\n\nThanks"
+ENTER
+DELAY 200
+STRING ATTACH=~/Desktop/screenshot.png
+ENTER
+DELAY 300
+
+REM Open Mail with a new message using AppleScript
+
+STRING osascript -e 'tell application "Mail"'
+ENTER
+DELAY 200
+STRING     set newMessage to make new outgoing message with properties {subject:"'"$SUBJECT"'", content:"'"$BODY"'"} at end of outgoing messages
+ENTER
+DELAY 300
+STRING     tell newMessage
+ENTER
+DELAY 200
+STRING         make new to recipient at end of to recipients with properties {address:"'"$RECIPIENT"'"}
+ENTER
+DELAY 300
+STRING         make new attachment with properties {file name:"'"$ATTACH"'"} at after the last paragraph
+ENTER
+DELAY 300
+STRING     end tell
+ENTER
+DELAY 200
+STRING     activate
+ENTER
+DELAY 200
+STRING end tell'
+ENTER
+DELAY 1000
+
+STRING echo "Mail window opened with screenshot attached."
+ENTER
+DELAY 500
+STRING echo "Press Send in Mail to deliver the email."
+ENTER
+DELAY 500
+STRING echo "-------------------"
+ENTER
+DELAY 2000
+GUI q
+DELAY
+ENTER
